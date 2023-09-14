@@ -5,6 +5,7 @@ using UnityEngine;
 public class BallScr : MonoBehaviour
 {
     public Vector3 returnPos;
+    public GameObject boem;
     public bool hit;
     public float resettimer = 4;
     private float resetFrames;
@@ -29,6 +30,10 @@ public class BallScr : MonoBehaviour
         if (hit)
         {
             resetFrames--;
+            if (resetFrames < 60)
+            {
+                boem.SetActive(false);
+            }
             if (resetFrames < 0)
             {
                 Return();
@@ -48,6 +53,7 @@ public class BallScr : MonoBehaviour
     {
         if(other.CompareTag("Finish") == true)
         {
+            boem.SetActive(true);
             GameObject.Find("ScoreBoard").GetComponent<ScoreBoardScr>().Score++;
             hit = true;
         }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1936,7 +1936,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!81 &963194226
 AudioListener:
   m_ObjectHideFlags: 0
@@ -3372,7 +3372,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1314824739
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3567,18 +3567,6 @@ PrefabInstance:
     - target: {fileID: 3031235720849918993, guid: 50185b39e8a7a6241b54bf19b296340d, type: 3}
       propertyPath: m_Name
       value: RugbyBall
-      objectReference: {fileID: 0}
-    - target: {fileID: 7642554590590576754, guid: 50185b39e8a7a6241b54bf19b296340d, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.120000005
-      objectReference: {fileID: 0}
-    - target: {fileID: 7642554590590576754, guid: 50185b39e8a7a6241b54bf19b296340d, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.120000005
-      objectReference: {fileID: 0}
-    - target: {fileID: 7642554590590576754, guid: 50185b39e8a7a6241b54bf19b296340d, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.120000005
       objectReference: {fileID: 0}
     - target: {fileID: 7642554590590576754, guid: 50185b39e8a7a6241b54bf19b296340d, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3781,22 +3769,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2870771001234127796, guid: 5846a83a1da06404db24f43ae1210079, type: 3}
-      propertyPath: m_Convex
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 3244438635301454511, guid: 5846a83a1da06404db24f43ae1210079, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.64
-      objectReference: {fileID: 0}
-    - target: {fileID: 3244438635301454511, guid: 5846a83a1da06404db24f43ae1210079, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.64
-      objectReference: {fileID: 0}
-    - target: {fileID: 3244438635301454511, guid: 5846a83a1da06404db24f43ae1210079, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.64
-      objectReference: {fileID: 0}
     - target: {fileID: 3244438635301454511, guid: 5846a83a1da06404db24f43ae1210079, type: 3}
       propertyPath: m_LocalPosition.x
       value: 1.034
@@ -3841,10 +3813,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Target
       objectReference: {fileID: 0}
-    - target: {fileID: 8361237019001972015, guid: 5846a83a1da06404db24f43ae1210079, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.004
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3858,17 +3826,9 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2765412747670415841, guid: a2f5e4d10defcc940851c535a64cf58c, type: 3}
-      propertyPath: m_Convex
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5042601464132975618, guid: a2f5e4d10defcc940851c535a64cf58c, type: 3}
       propertyPath: m_Name
       value: flor
-      objectReference: {fileID: 0}
-    - target: {fileID: 5042601464132975618, guid: a2f5e4d10defcc940851c535a64cf58c, type: 3}
-      propertyPath: m_TagString
-      value: Respawn
       objectReference: {fileID: 0}
     - target: {fileID: 6224087642216752506, guid: a2f5e4d10defcc940851c535a64cf58c, type: 3}
       propertyPath: m_LocalPosition.x
@@ -3970,10 +3930,6 @@ PrefabInstance:
     - target: {fileID: 8321171756974603055, guid: c9bc324368a40d548a32c125938664ef, type: 3}
       propertyPath: m_fontSizeBase
       value: 30
-      objectReference: {fileID: 0}
-    - target: {fileID: 8557183770733364219, guid: c9bc324368a40d548a32c125938664ef, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0.02
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
