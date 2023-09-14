@@ -39,6 +39,7 @@ public class BallScr : MonoBehaviour
     public void Return()
     {
         this.transform.position = returnPos;
+        this.GetComponent<Rigidbody>().velocity = Vector3.zero;
         hit = false;
         resetFrames = resettimer * 60;
     }
@@ -48,6 +49,14 @@ public class BallScr : MonoBehaviour
         if(other.CompareTag("Finish") == true)
         {
             GameObject.Find("ScoreBoard").GetComponent<ScoreBoardScr>().Score++;
+            hit = true;
+        }
+    }
+
+    public void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Respawn") == true)
+        {
             hit = true;
         }
     }
