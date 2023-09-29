@@ -44,6 +44,7 @@ public class BallScr : MonoBehaviour
     public void Return()
     {
         this.transform.position = returnPos;
+        boem.SetActive(false);
         this.GetComponent<Rigidbody>().velocity = Vector3.zero;
         hit = false;
         resetFrames = resettimer * 60;
