@@ -8,6 +8,7 @@ public class animateHand : MonoBehaviour
     public InputActionProperty pinchAnimationAction;
     public InputActionProperty grabAnimationAction;
     public Animator handYmator;
+    [SerializeField] GameObject grabOb;
 
     // Start is called before the first frame update
     void Start()
@@ -23,5 +24,14 @@ public class animateHand : MonoBehaviour
 
         float gribValue = grabAnimationAction.action.ReadValue<float>();
         handYmator.SetFloat("Grip", gribValue);
+
+        if (gribValue == 1)
+        {
+            grabOb.GetComponent<Collider>().enabled = true;
+        }
+        else
+        {
+            grabOb.GetComponent<Collider>().enabled = false;
+        }
     }
 }
