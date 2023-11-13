@@ -11,12 +11,12 @@ public class PairScr : MonoBehaviour
     MemoryScr memoryScr;
     [SerializeField] Material Coulour;
     [SerializeField] Material Blank;
-    [SerializeField] int correct;
+    public int correct;
 
     // Start is called before the first frame update
     void Start()
     {
-        Memory = GameObject.Find("memory gane");
+        //Memory = GameObject.Find("memory gane");
         memoryScr = Memory.GetComponent<MemoryScr>();
         foreach (GameObject g in memoryScr.Pairs)
         {
@@ -47,6 +47,12 @@ public class PairScr : MonoBehaviour
                         break;
                     case "pair (7)":
                         MyCoulour = "h";
+                        break;
+                    case "pair (8)":
+                        MyCoulour = "i";
+                        break;
+                    case "pair (9)":
+                        MyCoulour = "j";
                         break;
                 }
             }

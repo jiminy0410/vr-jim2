@@ -34,7 +34,6 @@ public class MemoryScr : MonoBehaviour
     }
     public void Update()
     {
-
         if (changed >= 2)
         {
             foreach (GameObject p in Pairs)
@@ -43,6 +42,35 @@ public class MemoryScr : MonoBehaviour
                 changed = 0;
             }
         }
+
+        if (GameObject.Find("ScoreBoard").GetComponent<ScoreBoardScr>().Score % Pairs.Count == 0 && GameObject.Find("ScoreBoard").GetComponent<ScoreBoardScr>().Score > 1)
+        {
+            finish();
+        }
+    }
+
+    public void finish()
+    {
+        foreach (GameObject p in Pairs)
+        {
+            p.GetComponent<PairScr>().correct = 0;
+            p.GetComponent<PairScr>().revertCoulour();
+            changed = 0;
+        }
+
+        foreach (GameObject c in Cubes)
+        {
+            toShuffle.Add(c.transform.position);
+            c.transform.position = new Vector3(10, 10, 10);
+        }
+
+        ShuffleList(toShuffle);
+
+        for (int i = 0; i < Cubes.Count; i++)
+        {
+            Cubes[i].transform.position = positions[i];
+        }
+        GameObject.Find("ScoreBoard").GetComponent<ScoreBoardScr>().Score = 0;
     }
 
     public void ShuffleList(List<Vector3> list)
