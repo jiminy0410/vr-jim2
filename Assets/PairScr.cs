@@ -12,6 +12,7 @@ public class PairScr : MonoBehaviour
     [SerializeField] Material Coulour;
     [SerializeField] Material Blank;
     public int correct;
+    public bool coldog;
 
     // Start is called before the first frame update
     void Start()
@@ -57,7 +58,7 @@ public class PairScr : MonoBehaviour
                 }
             }
         }
-        Coulour = Resources.Load<Material>("memmory/Materials/" + MyCoulour);
+        checkCoulour();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -73,6 +74,7 @@ public class PairScr : MonoBehaviour
                     memoryScr.changed++;
                     correct++;
                     Debug.Log("col");
+                    checkCoulour();
                     done();
                     changeCoulour(Coulour, Cube1);
                 }
@@ -84,7 +86,9 @@ public class PairScr : MonoBehaviour
                     Cube2Done = true;
                     memoryScr.changed++;
                     correct++;
+                    Debug.Log("col2");
                     done();
+                    checkCoulour();
                     changeCoulour(Coulour, Cube2);
                 }
             }
@@ -101,6 +105,7 @@ public class PairScr : MonoBehaviour
     {
         if (correct <= 2)
         {
+            checkCoulour();
             changeCoulour(Blank, Cube1);
             changeCoulour(Blank, Cube2);
             Cube1Done = false;
@@ -115,6 +120,18 @@ public class PairScr : MonoBehaviour
         {
             GameObject.Find("ScoreBoard").GetComponent<ScoreBoardScr>().Score++;
             correct++;
+        }
+    }
+
+    void checkCoulour()
+    {
+        if (coldog)
+        {
+            Coulour = Resources.Load<Material>("memmory/Materials/" + MyCoulour);
+        }
+        else
+        {
+            Coulour = Resources.Load<Material>("memmory/" + MyCoulour);
         }
     }
 }

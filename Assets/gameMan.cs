@@ -22,12 +22,36 @@ public class gameMan : MonoBehaviour
             case 1:
                 game2D.SetActive(true);
                 game3D.SetActive(false);
+                foreach (GameObject p in game2D.GetComponent<MemoryScr>().Pairs)
+                {
+                    p.GetComponent<PairScr>().coldog = true;
+                }
+                foreach (GameObject p in game3D.GetComponent<MemoryScr>().Pairs)
+                {
+                    p.GetComponent<PairScr>().coldog = true;
+                }
                 break;
             case 2:
                 game2D.SetActive(false);
                 game3D.SetActive(true);
                 break;
             case 3:
+                game2D.SetActive(true);
+                game3D.SetActive(false);
+                foreach (GameObject p in game2D.GetComponent<MemoryScr>().Pairs)
+                {
+                    p.GetComponent<PairScr>().coldog = false;
+                }
+                foreach (GameObject p in game3D.GetComponent<MemoryScr>().Pairs)
+                {
+                    p.GetComponent<PairScr>().coldog = false;
+                }
+                break;
+            case 4:
+                game2D.SetActive(false);
+                game3D.SetActive(true);
+                break;
+            case 5:
                 currentGame = 1;
                 break;
         }
