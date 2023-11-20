@@ -10,7 +10,7 @@ public class MemoryScr : MonoBehaviour
 
     public List<Vector3> toShuffle = new List<Vector3>();
     [SerializeField] GameObject GM;
-    public float targetTime = 0.5f;
+    public float targetTime = 0.25f;
 
 
 
@@ -50,7 +50,7 @@ public class MemoryScr : MonoBehaviour
         }
         else
         {
-            targetTime = 0.5f;
+            targetTime = 0.25f;
         }
 
         if (changed > 0)
