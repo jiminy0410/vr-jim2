@@ -25,7 +25,7 @@ public class animateHand : MonoBehaviour
         float gribValue = grabAnimationAction.action.ReadValue<float>();
         handYmator.SetFloat("Grip", gribValue);
 
-        if (gribValue == 1)
+        if (gribValue == 1 || triggerValue == 1)
         {
             grabOb.GetComponent<Collider>().enabled = true;
         }

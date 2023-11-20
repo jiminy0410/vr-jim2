@@ -6,29 +6,34 @@ public class gameMan : MonoBehaviour
 {
     public GameObject game2D;
     public GameObject game3D;
+    public GameObject gametest;
     public int currentGame;
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyUp("space"))
         {
-            currentGame++;
             game2D.GetComponent<MemoryScr>().finish();
             game3D.GetComponent<MemoryScr>().finish();
+            currentGame++;
         }
 
         switch (currentGame)
         {
+            case 0:
+                gametest.SetActive(true);
+                break;
             case 1:
+                gametest.SetActive(false);
                 game2D.SetActive(true);
                 game3D.SetActive(false);
                 foreach (GameObject p in game2D.GetComponent<MemoryScr>().Pairs)
                 {
-                    p.GetComponent<PairScr>().coldog = true;
+                    p.GetComponent<PairScr>().coldog = false;
                 }
                 foreach (GameObject p in game3D.GetComponent<MemoryScr>().Pairs)
                 {
-                    p.GetComponent<PairScr>().coldog = true;
+                    p.GetComponent<PairScr>().coldog = false;
                 }
                 break;
             case 2:
@@ -40,11 +45,11 @@ public class gameMan : MonoBehaviour
                 game3D.SetActive(false);
                 foreach (GameObject p in game2D.GetComponent<MemoryScr>().Pairs)
                 {
-                    p.GetComponent<PairScr>().coldog = false;
+                    p.GetComponent<PairScr>().coldog = true;
                 }
                 foreach (GameObject p in game3D.GetComponent<MemoryScr>().Pairs)
                 {
-                    p.GetComponent<PairScr>().coldog = false;
+                    p.GetComponent<PairScr>().coldog = true;
                 }
                 break;
             case 4:

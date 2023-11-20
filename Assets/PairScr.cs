@@ -4,12 +4,12 @@ public class PairScr : MonoBehaviour
 {
     [SerializeField] GameObject Cube1;
     [SerializeField] GameObject Cube2;
-    [SerializeField] bool Cube1Done;
-    [SerializeField] bool Cube2Done;
+    public bool Cube1Done;
+    public bool Cube2Done;
     [SerializeField] string MyCoulour;
     [SerializeField] GameObject Memory;
-    MemoryScr memoryScr;
-    [SerializeField] Material Coulour;
+    public MemoryScr memoryScr;
+    public Material Coulour;
     [SerializeField] Material Blank;
     public int correct;
     public bool coldog;
@@ -61,42 +61,7 @@ public class PairScr : MonoBehaviour
         checkCoulour();
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        Collider myCollider = collision.GetContact(0).thisCollider;
-        if (collision.gameObject.name == "grab")
-        {
-            if (myCollider == Cube1.GetComponent<Collider>())
-            {
-                if (!Cube1Done)
-                {
-                    Cube1Done = true;
-                    memoryScr.changed++;
-                    correct++;
-                    Debug.Log("col");
-                    checkCoulour();
-                    done();
-                    changeCoulour(Coulour, Cube1);
-                }
-            }
-            else if (myCollider == Cube2.GetComponent<Collider>())
-            {
-                if (!Cube2Done)
-                {
-                    Cube2Done = true;
-                    memoryScr.changed++;
-                    correct++;
-                    Debug.Log("col2");
-                    done();
-                    checkCoulour();
-                    changeCoulour(Coulour, Cube2);
-                }
-            }
-        }
-        Debug.Log(myCollider);
-    }
-
-    void changeCoulour(Material coulour, GameObject cube)
+    public void changeCoulour(Material coulour, GameObject cube)
     {
         cube.GetComponent<MeshRenderer>().material = coulour;
     }
@@ -114,7 +79,7 @@ public class PairScr : MonoBehaviour
         }
     }
 
-    void done()
+    public void done()
     {
         if (correct == 2)
         {
@@ -123,7 +88,7 @@ public class PairScr : MonoBehaviour
         }
     }
 
-    void checkCoulour()
+    public void checkCoulour()
     {
         if (coldog)
         {
