@@ -44,6 +44,15 @@ public class MemoryScr : MonoBehaviour
             timerEnded();
         }
 
+        if (changed >= 3)
+        {
+            foreach (GameObject p in Pairs)
+            {
+                p.GetComponent<PairScr>().revertCoulour();
+                changed = 0;
+            }
+        }
+
         if (changed >= 2)
         {
             targetTime -= Time.deltaTime;
